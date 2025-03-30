@@ -22,7 +22,10 @@ const ActivityForm = ({
           onChange={onFormChange}
         />
         <input
-          type="text"
+          type="number"
+          step="0.1"
+          min="0"
+          max="100"
           id="distance"
           name="distance"
           value={
@@ -38,7 +41,7 @@ const ActivityForm = ({
             onAddActivity({
               id: nextId,
               date: date.value,
-              distance: parseFloat(distance.value).toFixed(1),
+              distance: parseFloat(distance.value),
             })
           }
         >

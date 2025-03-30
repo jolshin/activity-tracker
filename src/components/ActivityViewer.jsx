@@ -14,7 +14,7 @@ const ActivityViewer = ({ activityData, onDeleteActivity, onEditActivity }) => {
         {sortedActivity.map((activity, index) => (
           <div key={index} className="activity-item">
             <span>{new Date(activity.date).toLocaleDateString("ru-RU")}</span>
-            <span>{activity.distance}</span>
+            <span>{parseFloat(activity.distance).toFixed(1)}</span>
             <div className="activity-actions">
               <button type="button" onClick={() => onEditActivity(activity)}>
                 ✎
